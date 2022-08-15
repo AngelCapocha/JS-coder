@@ -4,7 +4,7 @@ console.log(bienvenida)
 
 const stock = []
 
-class smarthphone {
+class Smarthphone {
     constructor(nombre, memoriaInterna, ram, precio){
         this.nombre = nombre
         this.memoriaInterna = memoriaInterna
@@ -13,42 +13,54 @@ class smarthphone {
     }
 }
 
-const celular1 = new smarthphone("Samsung S20", "64gb", "6gb", 80000 )
-const celular2 = new smarthphone("Iphone X", "32gb", "3gb", 70000)
-const celular3 = new smarthphone("Motorola G31", "64gb", "4gb", 50000)
-const celular4 = new smarthphone("Xiaomi Poco F4", "128gb", "4gb", 65000)
-const celular5 = new smarthphone("Iphone 12", "64gb", "4gb", 100000)
-const celular6 = new smarthphone("Samsung S6 Edge", "32gb", "3gb", 30000)
-const celular7 = new smarthphone("Xiaomi Redmi 9C", "64gb", "2gb", 40000)
-const celular8 = new smarthphone("Samsung Z Fold 2", "128gb", "6gb", 90000)
-const celular9 = new smarthphone("Xiaomi Redmi Note 10 Pro", "128gb", "6gb", 85000)
+const celular1 = stock.push(new Smarthphone("Samsung S20", "64gb", "6gb", 80000 ))
+const celular2 = stock.push(new Smarthphone("Iphone X", "32gb", "3gb", 70000))
+const celular3 = stock.push(new Smarthphone("Motorola G31", "64gb", "4gb", 50000))
+const celular4 = stock.push(new Smarthphone("Xiaomi Poco F4", "128gb", "4gb", 65000))
+const celular5 = stock.push(new Smarthphone("Iphone 12", "64gb", "4gb", 100000))
+const celular6 = stock.push(new Smarthphone("Samsung S6 Edge", "32gb", "3gb", 30000))
+const celular7 = stock.push(new Smarthphone("Xiaomi Redmi 9C", "64gb", "2gb", 40000))
+const celular8 = stock.push(new Smarthphone("Samsung Z Fold 2", "128gb", "6gb", 90000))
+const celular9 = stock.push(new Smarthphone("Xiaomi Redmi Note 10 Pro", "128gb", "6gb", 85000))
 
-stock.push(celular1,celular2,celular3,celular4,celular5,celular6,celular7,celular8,celular9)
+
 console.log(stock)
 
-for (const smarthphone of stock){
-    smarthphone.precio *= 1.20
-}
 
-const agregarCelular = () => {
-    const nombre = prompt("ingrese el nombre del celular")
-    const memoriaInterna = Number(prompt("ingrese su memoria"))
-    const ram = Number(prompt("ingrese la ram"))
-    const precio = Number(prompt("ingrese el valor"))
+const boton = document.getElementById('boton')
 
-stock.push(new smarthphone(nombre, memoriaInterna, ram, precio))
-}
+boton.innerText = "No soy un boton"
 
 
+const h1 = document.createElement('h1')
+h1.innerHTML = "<h1>Fui creado en JS</h1>"
 
-//agregarCelular()
+document.body.append(h1)
 
-//console.log(stock)
+boton.addEventListener('click', () => {
+    console.log("si lo era")
+})
+
+const userNuevo = []
+
+const email = document.querySelector('#exampleInputEmail1')
+const Nombre = document.querySelector('#exampleInputText1')
+const form = document.querySelector('formulario')
+
+form.addEventListener ('submit', (e) =>{
+    e.preventDefault()
+
+    const email = email.value
+    const Nombre = Nombre.value
+
+    const user = {
+        email: email,
+        Nombre: Nombre
+    }
+
+    userNuevo.push(user)
+
+    console.log(userNuevo)
 
 
-let preguntar = prompt("queres agregar algun celular al stock?").toLowerCase
-
-if(preguntar == "si"){
-    agregarCelular()
-}
-
+})
